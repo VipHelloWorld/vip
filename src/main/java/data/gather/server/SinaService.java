@@ -1,18 +1,17 @@
 package data.gather.server;
 
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.WebClient;
 import com.google.common.collect.Sets;
 import data.gather.constant.SinaConstant;
-import data.gather.util.AbstractGather;
+import data.gather.util.HtmlUtil;
 import data.gather.util.JsonObjectMapper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 //import com.yoyo.spider.utils.HttpTools;
 
@@ -28,30 +27,35 @@ public class SinaService {
 
 
     //按照英文字母 获取某字幕开头下的品牌数据
-    public static Set<String> getBrandPages(){
+    public static Set<String> getSinapages() {
         Set<String> set = Sets.newHashSet();
         try {
             Map<String, String> cookies = SinaConstant.getCookie();
             Document doc = Jsoup.connect(PREPAGE).cookies(cookies).get();
-//            System.out.println(doc);
+            System.out.println(doc);
             Elements eles = doc.getElementsByTag("script");
 //            System.out.println("--"+eles.text());
-            for (Element ele : eles) {
-                if(ele.toString().contains("\"ns\":\"pl_unlogin_home_feed\"")){
-                    String html = ele.toString() .replaceAll("<script charset=\"utf-8\">", "").replaceAll("<script>","");
-                    html = AbstractGather.getMessage(html);
-                    Map map = jsonObjectMapper.readValue(html, Map.class);
-                    Object htmls =  map.get("html");
-                    System.out.println(htmls.toString());
-                    Document docChild = Jsoup.parse(html);
-                    Elements elesChild = docChild.getElementsByClass("text text_cut2 W_f14");
-                    for (Element eleChild : elesChild){
-                        System.out.println("-----------------------------------");
-                        System.out.println(eleChild.text());
+            if(eles ==null || eles.size()==0){
+                return null;
+            }
+            for (Element ele:eles) {
+                if (ele.toString().contains("\"ns\":\"pl_unlogin_home_feed\"")) {
+//                    String regex = "\\<div class\\=\\\\\"subinfo_box clearfix\\\\\">(.*?)<\\\\/div>";
+                    String res1 = "\\<li class\\=\\\\\"pt_li pt_li_2 S_bg2\\\\\"(.*?)li>";
+                    String res2 = "\\<li class\\=\\\\\"pt_li pt_li_1 S_bg2\\\\\"(.*?)li>";
+                    Matcher m1 = Pattern.compile(res1).matcher(ele.toString());
+//                    Matcher m = Pattern.compile("\\<li class\\=(.*?)li>").matcher(ele.toString());
+                    while (m1.find()) {
+//                        System.out.println(m1.group());
+                        set.add(m1.group());
                     }
-//                    AbstractGather.getHtml(html);
+                    Matcher m2 = Pattern.compile(res2).matcher(ele.toString());
+                    while (m2.find()) {
+//                        System.out.println(m2.group());
+                        set.add(m2.group());
+                    }
+                    break;
                 }
-
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,52 +63,77 @@ public class SinaService {
         return set;
     }
 
-    public static void test(){
-        WebClient webClient = new WebClient(BrowserVersion.getDefault());
+    public static void getInfo(){
+        Set<String> sinaPages = getSinapages();
+        for (String str:sinaPages){
+            //获取链接
+            String url = getPageInfo(str);
+//            System.out.println(url);
 
+
+        }
+    }
+    //获取标题
+    public static String getPageInfo(String str){
+        String url = "";
+        String img = "";
+        String chatCount ="";
+        String title = "";
+        Document jsoup = Jsoup.parse(str);
+        //获取url
+        Elements elements = jsoup.getElementsByTag("li");
+        url = elements.get(0).attr("href");
+        url = url.replaceAll("\\\\\"","").replace("\\/","/");
+        Elements contentElement = elements.select("li[pt_li_1]");
+        //如果 class 为 'pt_li_1'类型
+        if(!contentElement.isEmpty()){
+            //获取标题图片
+            img = contentElement.select("img").attr("src");
+            img = img.replaceAll("\\\\\"","").replace("\\/","/");
+//            System.err.println(contentElement);
+            //获取标题
+            Elements titleElement = contentElement.select("div[text_cut2]");
+            title = HtmlUtil.getTextFromHtml(titleElement.text());
+            if(title!=""||title!=null){
+//                System.out.println(title);
+                title = title.substring(0,title.indexOf("\\n")+1);
+            }
+            if(titleElement.size()!=0){
+                titleElement = contentElement.select("div[text_cut]");
+                title = HtmlUtil.getTextFromHtml(titleElement.text());
+                if(title!=""||title!=null){
+                    System.out.println(title);
+                    title = title.substring(0,title.indexOf("\\n")+1);
+                }
+            }
+            //获取评论数量
+            Element chatCountElement = contentElement.select("span[s_txt2\\\"]").get(1);
+            Document parse = Jsoup.parse(chatCountElement.html());
+            String count = parse.getElementsByTag("em").get(3).text();
+            count = count.substring(0,count.indexOf("<"));
+
+        }
+        return url;
     }
 
-//    public void getHtml(){
-//        /** HtmlUnit请求web页面 */
-//        WebClient wc = new WebClient(BrowserVersion.CHROME);
-//        wc.getOptions().setUseInsecureSSL(true);
-//        wc.getOptions().setJavaScriptEnabled(true); // 启用JS解释器，默认为true
-//        wc.getOptions().setCssEnabled(false); // 禁用css支持
-//        wc.getOptions().setThrowExceptionOnScriptError(false); // js运行错误时，是否抛出异常
-//        wc.getOptions().setTimeout(100000); // 设置连接超时时间 ，这里是10S。如果为0，则无限期等待
-//        wc.getOptions().setDoNotTrackEnabled(false);
-//    }
+    //获取讨论量
+    //获取标题图片
 
-//    // 获取某个字母下的品牌车 下的 所有车系id
-//    private Set<String> gatherCarsIds(String url) {
-//        String result = HttpTools.sendGet(url, "", "gb2312");
-//        Document doc = Jsoup.parse(result);
-//        Elements eles = doc.select("dl");
-//        Set sets = Sets.newHashSet();
-//        for (Element ele : eles) {
-//            for (Element ele1 : ele.select("dd").select("li")) {
-//                if (!"dashline".equals(ele1.attr("class"))) {
-//                    if (!ele1.text().contains(this.TEXTFLAG)) {
-//                        String id = Pattern.compile("[^0-9]").matcher(ele1.attr("id")).replaceAll("").trim(); // 车系id
-//                        sets.add(id);
-//                    }
-//                }
-//            }
-//        }
-//        return sets;
-//    }
-//
-//    public Set<String> gatherCarsIds(){
-//        Set<String> urls=  getBrandPages();
-//        Set<String> carsIds = Sets.newHashSet();
-//        for (String url : urls) {
-//            carsIds.addAll(gatherCarsIds(url));
-//        }
-//        return carsIds;
-//    }
-//
-    public static void main(String[] args) {
-        getBrandPages();
+
+
+
+    public static String match(String source, String element, String attr) {
+        String result = "";
+        String reg = "<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>";
+        Matcher m = Pattern.compile(reg).matcher(source);
+        while (m.find()) {
+            String r = m.group(1);
+            result = r;
+        }
+        return result;
     }
 
+    public static void main(String[] args) throws Exception {
+        getInfo();
+    }
 }
