@@ -40,4 +40,11 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
+
+  <listener>
+    <listener-class>
+      data.gather.db.SchedulerTest
+    </listener-class>
+  </listener>
+
 </web-app>

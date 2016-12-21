@@ -10,6 +10,8 @@ public class HtmlUtil {
     private static final String regEx_style = "<style[^>]*?>[\\s\\S]*?<\\/style>"; // 定义style的正则表达式
     private static final String regEx_html = "<[^>]+>"; // 定义HTML标签的正则表达式
     private static final String regEx_space = "\\s*|\t|\r|\n";//定义空格回车换行符
+    ////                    String res1 = "\\<li class\\=\\\\\"pt_li pt_li_2 S_bg2\\\\\"(.*?)li>>";
+////                    String res2 = "\\<li class\\=\\\\\"pt_li pt_li_1 S_bg2\\\\\"(.*?)li>";
 
     /**
      * @param htmlStr
