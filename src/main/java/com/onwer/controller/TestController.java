@@ -28,6 +28,7 @@ public class TestController {
         logger.info("----info---");
         logger.debug("----debug---");
         logger.error("----error---");
-        return "test";
+        return "view/test";
     }
+
 }
