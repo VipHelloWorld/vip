@@ -6,6 +6,7 @@ import data.gather.model.InfoEntity;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 import static data.gather.db.ConnectionUtil.getConn;
@@ -18,7 +19,7 @@ public class Infohandle {
     public static int insert(InfoEntity infoEntity) {
         Connection conn = getConn();
         int i = 0;
-        String sql = "INSERT INTO info(chat_count,img,url,source,TIME,t,title)VALUES (?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO info(chat_count,img,url,source,TIME,title)VALUES (?,?,?,?,?,?);";
         PreparedStatement pstmt;
         try {
             pstmt = (PreparedStatement) conn.prepareStatement(sql);
@@ -26,9 +27,8 @@ public class Infohandle {
             pstmt.setString(2, infoEntity.getImg().toString());
             pstmt.setString(3, infoEntity.getUrl());
             pstmt.setInt(4,infoEntity.getSource());
-            pstmt.setDate(5,new Date(infoEntity.getTime().getTime()));
-            pstmt.setDate(6,new Date(infoEntity.getT()));
-            pstmt.setString(7,infoEntity.getTitle());
+            pstmt.setTimestamp(5,new Timestamp(infoEntity.getTime().getTime()));
+            pstmt.setString(6,infoEntity.getTitle());
             i = pstmt.executeUpdate();
             pstmt.close();
             conn.close();

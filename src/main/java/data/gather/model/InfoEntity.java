@@ -15,6 +15,7 @@ public class InfoEntity {
     private Long t = System.currentTimeMillis();
     private Integer source;//来源  0新浪 1腾讯
 
+
     public String getUrl() {
         return url;
     }

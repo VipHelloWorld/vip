@@ -40,11 +40,8 @@ public class SinaService {
                 if (eleString.contains("\"ns\":\"pl_unlogin_home_feed\"")) {
                     eleString = eleString.substring(eleString.indexOf("<div"), eleString.lastIndexOf("\"})"));
                     Document parseEle = Jsoup.parse(eleString);
-//                    System.out.println(parseEle);
                     Elements ulNum = parseEle.select("ul[pagenum]");
-//                    System.out.println("ul size:"+ulNum.size());
                     Elements lis = ulNum.select("li[pt_li_1]");
-//                    System.out.println("pt1:"+lis.size());
                     for (Element element : lis) {
                         set.add(element.toString());
                     }
@@ -63,7 +60,6 @@ public class SinaService {
             //获取链接
             InfoEntity infoEntity = getPageInfo(str);
             int insert = Infohandle.insert(infoEntity);
-            System.out.println(insert);
         }
     }
 
@@ -111,7 +107,6 @@ public class SinaService {
             chatCount = parse.getElementsByTag("em").get(3).text();
             chatCount = chatCount.substring(0, chatCount.indexOf("<"));
             infoEntity.setChatCount(chatCount);
-            System.out.println(infoEntity);
             infoEntity.setSource(0);
         }
         return infoEntity;

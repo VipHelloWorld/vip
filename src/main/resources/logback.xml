@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <Encoding>UTF-8</Encoding>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %line %logger{36} - %msg%n</pattern>
+        </layout>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+        </filter>
+    </appender>
+
+    <appender name="LogFile-INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${catalina.home}/logs/onwer.log</File>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %line %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.home}/logs/onwer.log.%d{yyyy-MM-dd}</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="LogFile-DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${catalina.home}/logs/onwer.log.debug</File>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %line %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.home}/logs/onwer.log.debug.%d{yyyy-MM-dd}.zip</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="LogFile-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${catalina.home}/logs/onwer.log.error</File>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %line %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.home}/logs/onwer.log.error.%d{yyyy-MM-dd}</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="org.apache" level="DEBUG"/>
+    <logger name="org.springframework.beans.factory.support" level="DEBUG"/>
+    <logger name="org.springframework" level="DEBUG"/>
+
+    <logger name="data.gather" level="DEBUG"/>
+    <!--<logger name="org.springframework.amqp" level="ERROR"/>-->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="LogFile-INFO"/>
+        <appender-ref ref="LogFile-DEBUG"/>
+        <appender-ref ref="LogFile-ERROR"/>
+    </root>
+</configuration>
