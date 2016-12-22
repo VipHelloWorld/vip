@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.onwer.dao.AdminDao">
+
+    <insert id="insertUser" parameterType="com.onwer.bean.Admin">
+        INSERT INTO user(name,phone,email,password,open_id)VALUES(#{name},#{phone},#{email},#{password},#{openId});
+    </insert>
+    <select id="findByLogin" parameterType="com.onwer.bean.Admin" resultType="com.onwer.bean.Admin">
+        SELECT id,NAME,phone,email,open_id,password FROM USER where phone=#{phone} and password = #{password};
+    </select>
+
+</mapper>

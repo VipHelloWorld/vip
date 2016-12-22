@@ -185,6 +185,19 @@
     </dependencies>
     <build>
         <finalName>onwer</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java/com/onwer/dao</directory>
+                <targetPath>com/onwer/dao</targetPath>
+                <includes>
+                    <include>*.xml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
 

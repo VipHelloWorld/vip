@@ -21,7 +21,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
         <property name="suffix" value=".html"/>    <!-- 后缀 -->
     </bean>
 
-    <!-- 访问静态文件（jpg,js,css）的方法 -->
     <mvc:resources mapping="/**" location="/" cache-period="31556926"/>
     <!--<mvc:resources location="/scripts/" mapping="/scripts/**" />-->
     <!--<mvc:resources location="/styles/" mapping="/styles/**" />-->
