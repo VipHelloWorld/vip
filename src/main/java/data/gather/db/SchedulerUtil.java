@@ -31,13 +31,13 @@ public class SchedulerUtil implements ServletContextListener {
             JobDetail job1 = JobBuilder.newJob(TencentJob.class).withIdentity("job2", "group1").build();
 
 //          每6小时执行一次
-            Trigger trigger = TriggerBuilder.newTrigger().withIdentity("simpleTrigger", "triggerGroup")
-                    .withSchedule(CronScheduleBuilder.cronSchedule("0 0 0/6 * * ?"))
-                    .startNow().build();
-            //每十秒
 //            Trigger trigger = TriggerBuilder.newTrigger().withIdentity("simpleTrigger", "triggerGroup")
-//                    .withSchedule(CronScheduleBuilder.cronSchedule("0/10 * * * * ?"))
+//                    .withSchedule(CronScheduleBuilder.cronSchedule("0 0 0/6 * * ?"))
 //                    .startNow().build();
+            //每十秒
+            Trigger trigger = TriggerBuilder.newTrigger().withIdentity("simpleTrigger", "triggerGroup")
+                    .withSchedule(CronScheduleBuilder.cronSchedule("0/10 * * * * ?"))
+                    .startNow().build();
 
 //       把作业和触发器注册到任务调度中
             scheduler.scheduleJob(job, trigger);

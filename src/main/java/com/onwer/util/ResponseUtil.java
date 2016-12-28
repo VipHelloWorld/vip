@@ -30,7 +30,7 @@ public class ResponseUtil {
             }else{//不跨域的情况  
             	out.write(jsonStr.toString());  
                 out.close();  
-            }  
+            }
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
