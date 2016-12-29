@@ -408,7 +408,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge" id="count_today">0</div>
                                     <div>今日数据量</div>
                                 </div>
                             </div>
@@ -430,7 +430,7 @@
                                     <i class="glyphicon glyphicon-signal fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
+                                    <div class="huge" id="count_all">0</div>
                                     <div>历史数据量</div>
                                 </div>
                             </div>
@@ -452,7 +452,7 @@
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
+                                    <div class="huge" id ="count_day">0</div>
                                     <div>统计天数</div>
                                 </div>
                             </div>
@@ -941,8 +941,9 @@
             url: "/onwer/msg/count",
             dataType: "json",
             success: function(data){
-             alert("===:"+eval(data));
-                alert(data.count);
+                document.getElementById("count_today").innerHTML=data.countByDay;
+                document.getElementById("count_all").innerHTML=data.count;
+                document.getElementById("count_day").innerHTML=data.mapByGroup.length;
             }
         });
     });
