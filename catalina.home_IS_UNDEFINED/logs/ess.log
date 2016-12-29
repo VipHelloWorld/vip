@@ -1,0 +1,50 @@
+2016-12-29 17:39:57.109 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@339d035e: startup date [Thu Dec 29 17:39:57 CST 2016]; root of context hierarchy
+2016-12-29 17:39:57.153 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-client.xml]
+2016-12-29 17:40:23.768 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@339d035e: startup date [Thu Dec 29 17:40:23 CST 2016]; root of context hierarchy
+2016-12-29 17:40:23.806 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:40:24.020 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:40:24.085 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:40:39.308 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d8cd562: startup date [Thu Dec 29 17:40:39 CST 2016]; root of context hierarchy
+2016-12-29 17:40:39.344 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:40:39.445 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:40:39.472 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:42:04.504 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@339d035e: startup date [Thu Dec 29 17:42:04 CST 2016]; root of context hierarchy
+2016-12-29 17:42:04.541 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:42:04.668 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:42:04.707 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:42:42.007 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@339d035e: startup date [Thu Dec 29 17:42:42 CST 2016]; root of context hierarchy
+2016-12-29 17:42:42.044 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:42:42.150 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:42:42.178 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:44:19.895 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@9482acb: startup date [Thu Dec 29 17:44:19 CST 2016]; root of context hierarchy
+2016-12-29 17:44:19.931 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:44:20.049 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:44:20.081 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:45:44.984 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@339d035e: startup date [Thu Dec 29 17:45:44 CST 2016]; root of context hierarchy
+2016-12-29 17:45:45.020 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:45:45.132 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:45:45.180 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:47:28.387 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@9482acb: startup date [Thu Dec 29 17:47:28 CST 2016]; root of context hierarchy
+2016-12-29 17:47:28.423 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:47:28.534 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:47:28.563 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:51:01.362 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@190d1be1: startup date [Thu Dec 29 17:51:01 CST 2016]; root of context hierarchy
+2016-12-29 17:51:01.403 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:51:01.508 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:51:01.535 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:51:29.449 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d8cd562: startup date [Thu Dec 29 17:51:29 CST 2016]; root of context hierarchy
+2016-12-29 17:51:29.486 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:51:29.594 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:51:29.635 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:51:56.757 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@60f17a2f: startup date [Thu Dec 29 17:51:56 CST 2016]; root of context hierarchy
+2016-12-29 17:51:56.794 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:51:56.913 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:51:56.956 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 17:53:28.888 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@190d1be1: startup date [Thu Dec 29 17:53:28 CST 2016]; root of context hierarchy
+2016-12-29 17:53:28.924 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 17:53:29.034 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 17:53:29.075 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2016-12-29 18:01:17.347 [main] INFO  578 o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d8cd562: startup date [Thu Dec 29 18:01:17 CST 2016]; root of context hierarchy
+2016-12-29 18:01:17.384 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-client-beans.xml]
+2016-12-29 18:01:17.493 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2016-12-29 18:01:17.520 [main] INFO  317 o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
